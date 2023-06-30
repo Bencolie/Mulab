@@ -1,0 +1,16 @@
+<!-- "base.html" serves as a basic sture of all html files -->
+{% extends "base.html" %}
+
+{% block title %}MULAB:Laboratoire{% endblock %}
+{% block content%}
+<style>
+    body {
+        background-image: url("{{ url_for('static', filename='lab_bg.gif') }}");
+        background-size: 1450px 900px;
+        background-repeat: no-repeat;
+        background-position: 50% 1%;
+    }
+</style>
+
+<div class="container-fluid position-relative"></div>
+{% endblock %}
