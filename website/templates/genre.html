@@ -1,0 +1,47 @@
+<!-- "base.html" serves as a basic sture of all html files #554994-->
+{% extends "base.html" %}
+
+{%block css_block%}<link rel="stylesheet" href="/static/genre.css">{% endblock %}
+{% block title %}MULAB:Genre{% endblock %}
+
+{% block content%}
+
+<div class="row" style="height:25%">
+    <h1 data-text="Genres"></h1>
+</div>
+
+<div class="row" style="height:30%;">
+    <div class="col-md-6">
+        <form method="POST" action="/music_genre">
+            <div class="form-group">
+                <div class="d-grid-3">
+                    {% for cat in categories %}
+                    <button type="submit" class="btn custom-button-genre" name='getTheseTracks' value="{{ cat.link }},{{ cat.name }}">{{ cat.name }}</button>
+                    {% endfor %}
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div class="row " style="height:20%">
+    <div class="col-6">
+        <form method="POST" action="/music_download">
+            <div class="form-group">
+                {% if tracks %}
+                    <div class="d-grid-4">
+                        {% for tr in tracks %}
+                            <button type="submit" class="btn custom-button-track" name="downloadThisTrack" value="{{tr.dlink}}">{{ tr.name }}</button>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <h2>"Please Choose A Music Genre"</h2>
+                {% endif %}
+                </div>
+            </div>
+        </form>  
+    </div> 
+</div>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+<!-- "base.html" serves as a basic sture of all html files -->
+{% extends "base.html" %}
+{%block css_block%}<link rel="stylesheet" href="/static/home.css">{% endblock %}
+{% block title %}MULAB:Home{% endblock %}
+
+{% block content %}
+<div class="container-fluid intro" style="height:100vh">
+    <button onclick=backIntro()  role="button" class="btn">
+        <i class="fa-solid fa-caret-left fa-bounce" id="back_icon"></i>
+    </button>
+    <div class="info">
+        <img src="" alt="" id="intro_img">
+    </div>
+    <button onclick=nextIntro() role="button" class="btn">
+        <i class="fa-solid fa-caret-right fa-bounce" id="next_icon"></i>
+    </button>
+</div>
+
+<script src="/static/home.js"></script>
+{% endblock %}
+

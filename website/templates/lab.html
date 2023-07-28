@@ -1,0 +1,35 @@
+<!-- "base.html" serves as a basic sture of all html files -->
+{% extends "base.html" %}
+
+{% block css_block %}<link rel="stylesheet" href="/static/lab.css">{% endblock %}
+{% block title %}MULAB:Laboratoire{% endblock %}
+
+{% block content%}
+<canvas id='canvas'></canvas>
+<audio src="" id="music" ></audio>
+<div class="row " style="height:50%;">
+    <div class="music_infos" >
+        <button onclick=previousSong() class="btn" role="button" id="previousSong_button">
+            <i class="fa-solid fa-backward-step" style="color:#F65A83;"></i>
+        </button>
+        <div class="text">
+            <p id="title">music.mp3</p>
+            <p id="artist">artist</p>
+        </div>
+        <button onclick=nextSong() class="btn" role="button" id="nextSong_button">
+            <i class="fa-solid fa-forward-step" style="color:#F65A83;"></i>
+        </button>
+</div>
+
+<div class="row" style="height:50%;">
+    <div class="image_and_play_button" >
+        <img src="" alt="non" id="image">
+        <button class="btn" role="button" id="play_button">
+            <i class="fa-regular fa-circle-play" style="color:#F65A83;"></i>
+        </button>
+    </div>     
+</div>
+
+<!--JavaScript File-->
+<script src="/static/lab.js"></script>
+{% endblock %}
