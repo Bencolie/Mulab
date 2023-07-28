@@ -1,0 +1,97 @@
+body {
+    width: auto;
+    height: auto;
+    padding: 50px 0px 200px 0px ;
+}
+#premium {
+    background-image: url('/static/z_orange_green.jpg');
+    background-size: cover;
+    opacity: 1;
+}
+
+.row{
+    justify-content: center;
+    align-items: center;
+}
+
+.d-grid-3{
+    display:grid;
+    grid-template-columns: repeat(3, 150px);
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    
+}
+.custom-button-genre{
+    background-color: #F65A83;
+    color: #F6CAD2;
+}
+
+.custom-button-track{
+    background-color: #3AA6B9;
+    color: #99DBF5;
+}
+
+h2{
+    text-align: center;
+    left: 20px
+}
+
+.d-grid-4{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+div h1{
+    top: 80px;
+    text-align: center;
+    position: relative;
+    font-size: 7em;
+    letter-spacing:7px;
+    color:#F65A83;
+    font-family: sans-serif;
+    display:table;
+    margin:40px auto;
+    cursor:pointer;
+    transition:.6s;
+}
+h1:before,
+h1:after {
+    content:attr(data-text);
+    transition:.6s;
+}
+h1:before {
+    position: absolute;
+    z-index:-1;
+    text-shadow:
+    0px 0px,
+    0px 0px,
+    0px 0px,
+    0px 0px,
+    0px 0px,
+    0px 0px,
+    0px 0px,
+    0px 0px,
+    0px 0px,
+    0px 0px;
+    -webkit-mask:repeating-linear-gradient(45deg, transparent 0 3px, rgba(0,0,0,0.5) 0 6px);
+    mask:repeating-linear-gradient(45deg, transparent 0 3px, rgba(0,0,0,0.5) 0 6px);
+}
+h1:hover {
+    transform:translate(-10px,-10px);
+}  
+h1:hover:before {
+    text-shadow:
+     1px 1px,
+     2px 2px,
+     3px 3px,
+     4px 4px,
+     5px 5px,
+     6px 6px,
+     7px 7px,
+     8px 8px,
+     9px 9px,
+     10px 10px;
+}
+

@@ -1,0 +1,76 @@
+body {
+    background-color: white;
+    background-image: url('/static/z_cloud_blue.jpg');
+    background-size: cover;
+}
+
+#canvas{
+    position: absolute;
+    top: 20%;
+    left: 6%;
+    width: 110vh;
+    height: 65vh;
+    border: 6px solid #F0F0F0;
+    border-radius: 5%;
+    background-color: rgb(246, 202, 210);
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50%; /* Adjust the height as needed */
+}
+
+.music_infos{
+    position: absolute;
+    top:30%;
+    left: 65%;
+    gap: 40px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#title,#artist{
+    height: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+#title{
+    font-size: 25px;
+}
+
+#artist{
+    font-size:15px;
+}
+
+#previousSong_button,#nextSong_button{
+    font-size: 28px;
+}
+
+
+.image_and_play_button{
+    position: relative;
+    top:170%;
+    left:27%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#image{
+    width: 200px ;
+    height: 200px;
+    border: 5px solid #F65A83;
+    border-radius: 3em;
+}
+
+#play_button{
+    font-size: 50px;
+}
+
+
+
