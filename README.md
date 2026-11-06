@@ -40,6 +40,9 @@ The system features an automated **Selenium Headless Scraping Pipeline** to bypa
 ```text
 Mulab/
 ├── main.py                # Application entry point & server runner
+├── DockerFile
+├── docker-compose.yml
+├── requirements.txt
 └── website/               # Core application package
     ├── __init__.py        # App Factory (Selenium scrapers, MSSQL setup, Blueprints)
     ├── models.py          # Database models (Tracks, Genres)
