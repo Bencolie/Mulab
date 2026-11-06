@@ -10,8 +10,6 @@ import os,time
 # packages for scraping
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
-from webdriver_manager.core.utils import ChromeType
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 # packages for ErrorHandling
@@ -24,8 +22,13 @@ def get_website(url):
     options.add_argument("--headless")
     # new_driver = r'C:\\Users\\k8uwall\\PycharmProjects\sample\data\drivers\\chromedriver\win32\\115.0.5790.98'
     # service =Service(executable_path=new_driver)
-    service=Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
-    music = webdriver.Chrome(service=service, options=options)
+    # service=Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
+
+    # 直接使用 Dockerfile 內安裝好的系統 Chromium 與 ChromeDriver 路徑
+    options.binary_location = os.environ.get("CHROME_BIN", "/usr/bin/chromium")
+    driver_path = os.environ.get("CHROMEDRIVER_PATH", "/usr/bin/chromedriver")
+    
+    music = webdriver.Chrome(service=Service(driver_path), options=options)
 
     #options =Options()
     #options.add_argument("--headless")

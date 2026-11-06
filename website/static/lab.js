@@ -84,19 +84,19 @@ let music_index= 0;
 let music_list=[
     {
         name:'Flower',
-        path:"/instances/Flowers.mp3",
+        path:"/static/downloads/Flowers.mp3",
         image:"/static/music_gifs/z_cute01.gif",
         artist:'Ashamaluevmusic'
     },
     {
         name:'Heartsore',
-        path:"/instances/Heartsore.mp3",
+        path:"/instances/downloads/Heartsore.mp3",
         image:"/static/music_gifs/z_cute02.gif",
         artist:'Ashamaluevmusic'
     },
     {
         name:'Reverie',
-        path:"/instances/Reverie.mp3",
+        path:"/instances/downloads/Reverie.mp3",
         image:"/static/music_gifs/z_cute04.gif",
         artist:'Ashamaluevmusic'
     }
