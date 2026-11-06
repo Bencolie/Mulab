@@ -90,13 +90,13 @@ let music_list=[
     },
     {
         name:'Heartsore',
-        path:"/instances/downloads/Heartsore.mp3",
+        path:"/static/downloads/Heartsore.mp3",
         image:"/static/music_gifs/z_cute02.gif",
         artist:'Ashamaluevmusic'
     },
     {
         name:'Reverie',
-        path:"/instances/downloads/Reverie.mp3",
+        path:"/static/downloads/Reverie.mp3",
         image:"/static/music_gifs/z_cute04.gif",
         artist:'Ashamaluevmusic'
     }
