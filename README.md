@@ -29,7 +29,7 @@ The system features an automated **Selenium Headless Scraping Pipeline** to bypa
 ## 🛠️ Tech Stack & Dependencies
 
 - **Backend & Web Framework:** Python 3, Flask, Flask-CORS, Flask-SQLAlchemy
-- **Automated Web Scraping:** Selenium WebDriver, Chrome Driver, `webdriver_manager`
+- **Automated Web Scraping:** Selenium WebDriver, Chrome Driver
 - **Database Engine:** Microsoft SQL Server (MSSQL), `pyodbc` driver
 - **Frontend Architecture:** HTML5, CSS3, JavaScript, Jinja2 Template Engine
 
@@ -75,24 +75,12 @@ Mulab/
    cd Mulab
    ```
 
-2. **Create and activate a virtual environment:**
-   - **Linux / macOS:**
+2. **Build docker container with docker compose:**
      ```bash
-     python3 -m venv venv
-     source venv/bin/activate
-     ```
-   - **Windows:**
-     ```bash
-     python -m venv venv
-     venv\Scripts\activate
+     docker compose up --build -d
      ```
 
-3. **Install required dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Configure Database Credentials & Driver Path:**
+3. **Configure Database Credentials & Driver Path:**
    Open `website/__init__.py` and update the MSSQL connection properties and local ChromeDriver path according to your environment:
    ```python
    # Update server & database details
@@ -105,11 +93,7 @@ Mulab/
    new_driver = r'YOUR_LOCAL_CHROMEDRIVER_PATH'
    ```
 
-5. **Launch the application:**
-   ```bash
-   python main.py
-   ```
-   Navigate to `http://127.0.0.1:4000` in your web browser to access the web interface, trigger scraping pipelines, and stream audio tracks.
+   Navigate to `http://127.0.0.1:4000` in your web browser to access the web interface, trigger scraping pipelines, and stream audio tracks. Use `Control + C` or `docker compose down` to exit and remove the docker container. 
 
 ---
 
