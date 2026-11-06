@@ -4,73 +4,75 @@ body {
     background-size: cover;
 }
 
-#canvas{
-    position: absolute;
-    top: 20%;
-    left: 6%;
-    width: 110vh;
+/* 1. The main wrapper placing canvas and sidebar side-by-side */
+.lab-layout-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 55px;
+    height: 100vh; /* Make it full screen height to center vertically */
+}
+
+/* 2. The Canvas (Left side) - NO absolute positioning or top/left */
+#canvas {
+    width: 100vh;  /* Adjusted slightly so it fits nicely alongside the sidebar */
     height: 65vh;
     border: 6px solid #F0F0F0;
     border-radius: 5%;
     background-color: rgb(246, 202, 210);
 }
 
-.row {
+/* 3. The Right Sidebar holding all music controls stacked vertically */
+.music-player-panel {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 50%; /* Adjust the height as needed */
+    align-items: center;
+    gap: 30px; /* Clean space between song info and album art */
 }
 
-.music_infos{
-    position: absolute;
-    top:30%;
-    left: 65%;
-    gap: 40px;
+/* 4. Song info header row */
+.music_infos {
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 20px;
 }
 
-#title,#artist{
-    height: 15px;
+#title, #artist {
     display: flex;
     flex-direction: column;
     text-align: center;
+    margin: 0;
 }
 
-#title{
+#title {
     font-size: 25px;
 }
 
-#artist{
-    font-size:15px;
+#artist {
+    font-size: 15px;
 }
 
-#previousSong_button,#nextSong_button{
+#previousSong_button, #nextSong_button {
     font-size: 28px;
 }
 
-
-.image_and_play_button{
-    position: relative;
-    top:170%;
-    left:27%;
+/* 5. Image and play button stack - NO 170% top offsets! */
+.image_and_play_button {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 15px;
 }
 
-#image{
-    width: 200px ;
+#image {
+    width: 200px;
     height: 200px;
     border: 5px solid #F65A83;
     border-radius: 3em;
 }
 
-#play_button{
+#play_button {
     font-size: 50px;
 }
-
-
-
