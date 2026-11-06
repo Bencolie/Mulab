@@ -13,7 +13,7 @@ The system features an automated **Selenium Headless Scraping Pipeline** to bypa
   - Handles dynamic DOM elements using explicit waits (`WebDriverWait`, `EC.element_to_be_clickable`).
   - Automatically handles cookie banners, complex SVG modals, and extracts audio track links (Dropbox integration).
   - Implements an automated local file downloader for retrieved audio assets.
-- **Enterprise Database Integration (MSSQL & SQLAlchemy):**
+- **Database Integration (MSSQL & SQLAlchemy):**
   - Configured with `SQLAlchemy` ORM via `pyodbc` (ODBC Driver 17 / FreeTDS) to interface with **Microsoft SQL Server**.
   - Implements a self-healing connection verification routine (`check_connection()`) and automatic schema creation.
 - **Modular Flask Application (Application Factory Pattern):**
@@ -83,7 +83,7 @@ Mulab/
 
 3. **Install required dependencies:**
    ```bash
-   pip install flask flask-sqlalchemy flask-cors selenium webdriver-manager pyodbc
+   pip install -r requirements.txt
    ```
 
 4. **Configure Database Credentials & Driver Path:**
@@ -103,7 +103,7 @@ Mulab/
    ```bash
    python main.py
    ```
-   Navigate to `http://127.0.0.1:5000` in your web browser to access the web interface, trigger scraping pipelines, and stream audio tracks.
+   Navigate to `http://127.0.0.1:4000` in your web browser to access the web interface, trigger scraping pipelines, and stream audio tracks.
 
 ---
 
