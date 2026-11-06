@@ -1,4 +1,7 @@
 # Mulab - Automated Music Scraping & Streaming Web Architecture
+<img width="1440" height="776" alt="Capture d’écran 2026-11-06 à 12 21 02" src="https://github.com/user-attachments/assets/ab727af2-4ff2-4479-a088-96381c6d1b04" />
+
+
 
 Mulab is a full-stack Python web application engineered for automated music scraping, relational database persistence, dynamic web playback, and genre management. 
 
