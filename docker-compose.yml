@@ -5,7 +5,8 @@ services:
     ports:
       - "4000:4000"
     volumes:
-      # 將 SQLite 資料庫與下載的音樂檔案持久化到宿主機，避免容器重建時遺失
+      # mount SQLite database and downloaded music files to host, 
+      # avoiding data loss on container recreation
       - ./website/instance:/app/instance
       - ./website/static/downloads:/app/website/static/downloads
     restart: unless-stopped
