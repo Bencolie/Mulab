@@ -3,16 +3,16 @@ let img_index= 0;
 
 let img_list=[
     {
-        image:"/static/z_Intro01.jpg",
+        image:"/static/intro_slides/z_Intro01.jpg",
     },
     {
-        image:"/static/z_Intro02.jpg",
+        image:"/static/intro_slides/z_Intro02.jpg",
     },
     {
-        image:"/static/z_Intro03.jpg",
+        image:"/static/intro_slides/z_Intro03.jpg",
     },
     {
-        image:"/static/z_Intro04.jpg",
+        image:"/static/intro_slides/z_Intro04.jpg",
     }
 ];
 

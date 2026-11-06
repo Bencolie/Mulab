@@ -2,7 +2,7 @@ body {
     width: auto;
     height: auto;
     padding: 50px 0px 200px 0px ;
-    background-image: url('/static/z_flower_pink_yellow.jpg');
+    background-image: url('/static/background_imgs/z_flower_pink_yellow.jpg');
     background-size: cover;  
 }
 

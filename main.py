@@ -6,4 +6,4 @@ app = create_app()
 # debug=True : Anytime there's a change of the code, it'll rerun the webserver
 # use_reloader=False --> avoid the SystemExist Error when debug=True
 if __name__ == '__main__' :
-    app.run(port=4000,debug=True,use_reloader=False,static_files={'/static':'static'}) 
+    app.run(host='0.0.0.0',port=4000,debug=True,use_reloader=False,static_files={'/static':'static'}) 

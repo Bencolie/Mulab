@@ -1,4 +1,2 @@
 .venv
 .env.sql
-Dockerfile
-docker-compose.yml
