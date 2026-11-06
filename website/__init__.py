@@ -11,6 +11,7 @@ import os,time
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.core.utils import ChromeType
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 # packages for ErrorHandling
@@ -21,8 +22,9 @@ def get_website(url):
     # Run Chrome with headless mode
     options = webdriver.chrome.options.Options()
     options.add_argument("--headless")
-    new_driver = r'C:\\Users\\k8uwall\\PycharmProjects\sample\data\drivers\\chromedriver\win32\\115.0.5790.98'
-    service =Service(executable_path=new_driver)
+    # new_driver = r'C:\\Users\\k8uwall\\PycharmProjects\sample\data\drivers\\chromedriver\win32\\115.0.5790.98'
+    # service =Service(executable_path=new_driver)
+    service=Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
     music = webdriver.Chrome(service=service, options=options)
 
     #options =Options()
@@ -118,11 +120,17 @@ def create_app():
     app.config['SECRET_KEY'] = 'hjkskahkd oqpoipjlk' # key is set randomly
     # Build the connction with flask and mssql (driver = FreeTDS)
     # MacOS: app.config['SQLALCHEMY_DATABASE_URI']= "mssql+pyodbc:///?odbc_connect="+ urllib.parse.quote_plus('DRIVER={FreeTDS};SERVER=localhost;PORT=1433;DATABASE=master;UID=sa;PWD=someThingComplicated1234')    
-    app.config['SQLALCHEMY_DATABASE_URI'] = connection_string
+    db_path = os.path.join(app.instance_path, 'mulab.db')
+    os.makedirs(app.instance_path, exist_ok=True)
+    app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{db_path}'
+    app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+    
     db.init_app(app)
 
     # Verify the mssql connection
-    check_connection()
+    # check_connection()
+    with app.app_context():
+        db.create_all()
 
     # Deal with the CORS Policy
     CORS(app)
@@ -140,13 +148,14 @@ def create_app():
 
     return app
 
-
+"""
 def check_connection():
     try:
         db.session.execute('SELECT 1')
         return 'Connection Successful'
     except Exception as e:
         return f'Connection error:{str(e)}'
+"""
 
 def create_database(app):
     db_path = os.path.join('website', database)
