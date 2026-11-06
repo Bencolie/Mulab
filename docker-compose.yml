@@ -1,8 +1,6 @@
 services:
   mulab:
-    build: 
-      context: ./website
-      dockerfile: Dockerfile
+    build: .
     container_name: mulab_app
     ports:
       - "4000:4000"
